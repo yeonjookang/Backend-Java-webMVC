@@ -157,7 +157,7 @@ public final class list_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </a>\n");
       out.write("\n");
       out.write("        <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">\n");
-      out.write("            <li><a href=\"/index.html\" class=\"nav-link px-2 link-secondary\">Q&A</a></li>\n");
+      out.write("            <li><a href=\"/home.jsp\" class=\"nav-link px-2 link-secondary\">Q&A</a></li>\n");
       out.write("            <li><a href=\"#\" class=\"nav-link px-2 link-dark\">FAQs</a></li>\n");
       out.write("            <li><a href=\"/user/userList\" class=\"nav-link px-2 link-dark\">User List</a></li>\n");
       out.write("            <li><a href=\"#\" class=\"nav-link px-2 link-dark\">About</a></li>\n");
