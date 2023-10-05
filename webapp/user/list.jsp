@@ -31,14 +31,16 @@
                 </th>
                 <th class="col-md-3"><%= user.getEmail() %>
                 </th>
-                <th class="col-md-3"><a href="/user/updateForm?userId=<%= user.getUserId() %>" class="btn btn-success" role="button"
-                    <%
-                        String sessionId = (String)request.getAttribute("sessionId");
-                        if(!sessionId.equals(user.getUserId())){ %>
-                                        disabled="disabled"
-                        <% }
-                    %>
-                >수정</a></th>
+                <th class="col-md-3"><button class="btn btn-success" type="button" id="updateButton"
+                        <%
+                            String sessionId = (String)request.getAttribute("sessionId");
+                            if(!sessionId.equals(user.getUserId())){
+                                out.print("disabled");
+                            }
+                        %>
+                >
+                    <a href="/user/updateForm?userId=<%= user.getUserId() %>">수정</a>
+                </button></th>
             </tr>
             <%
                 }
