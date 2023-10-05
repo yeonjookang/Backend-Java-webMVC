@@ -1,6 +1,7 @@
 package jwp.controller;
 
 import core.db.MemoryUserRepository;
+import core.mvc.Controller;
 import jwp.model.User;
 
 import javax.servlet.ServletException;
@@ -11,8 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/user/login")
-public class LoginController extends HttpServlet {
+public class LoginController implements Controller {
 
     /**
      * 세션은 클라이언트와 서버 간의 상태 정보를 유지하고 공유하기 위한 기술로,
@@ -22,15 +22,15 @@ public class LoginController extends HttpServlet {
      */
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         if(isLoginSuccess(req.getParameter("userId"),req.getParameter("password"))){
             //세션 정보 저장
             User findUser = MemoryUserRepository.getInstance().findUserById(req.getParameter("userId"));
             HttpSession session = req.getSession();
             session.setAttribute("user",findUser);
-            resp.sendRedirect("/");
+            return "redirect:/";
         }else{
-            resp.sendRedirect("/user/login_failed.jsp");
+            return "redirect:/user/loginFailed";
         }
     }
 
