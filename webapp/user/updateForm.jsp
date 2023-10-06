@@ -15,19 +15,19 @@
             %>
           <form name="sign-up" method="post" action="/user/update">
             <div class="form-floating">
-              <input type="text" class="form-control" id="userId" value="${user.userId}" name="userId" placeholder="Id" readonly>
+              <input type="text" class="form-control" id="userId" value="${sessionScope.user.userId}" name="userId" placeholder="Id" readonly>
               <label for="userId">User Id</label>
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control" id="password" value="${user.password}" name="password" placeholder="Password">
+              <input type="password" class="form-control" id="password" value="${sessionScope.user.password}" name="password" placeholder="Password">
               <label for="password">password</label>
             </div>
             <div class="form-floating">
-              <input type="text" class="form-control" id="name" value="${user.name}" name="name" placeholder="name">
+              <input type="text" class="form-control" id="name" value="${sessionScope.user.name}" name="name" placeholder="name">
               <label for="name">name</label>
             </div>
             <div class="form-floating">
-              <input type="email" class="form-control" id="email" value="${user.email}" name="email" placeholder="name@example.com">
+              <input type="email" class="form-control" id="email" value="${sessionScope.user.email}" name="email" placeholder="name@example.com">
               <label for="email">email</label>
             </div>
             <div style="height:10px;">

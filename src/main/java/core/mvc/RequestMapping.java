@@ -1,6 +1,5 @@
 package core.mvc;
 
-import jdk.jfr.Frequency;
 import jwp.controller.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +21,7 @@ public class RequestMapping {
 
         controllers.put("/user/form",new ForwardController("/user/form.jsp"));
         controllers.put("/user/loginForm",new ForwardController("/user/login.jsp"));
-        controllers.put("/user/loginFailed",new ForwardController("/user/loginFailed.jsp"));
-        controllers.put("/qna/form", new ForwardController("/qna/form.jsp"));
+        controllers.put("/user/loginFailed",new ForwardController("/user/login_failed.jsp"));
         controllers.put("/qna/show", new ForwardController("/qna/show.jsp"));
 
         controllers.put("/user/list",new ListUserController());
@@ -32,6 +30,9 @@ public class RequestMapping {
         controllers.put("/user/signup",new CreateUserController());
         controllers.put("/user/updateForm",new UpdateUserFormController());
         controllers.put("/user/update",new UpdateUserController());
+        controllers.put("/qna/form", new QuestionFormController());
+        controllers.put("/qna/create",new CreateQuestionController());
+
     }
 
     public Controller getController(HttpServletRequest request) {
