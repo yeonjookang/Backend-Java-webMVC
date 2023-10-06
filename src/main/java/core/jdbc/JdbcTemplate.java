@@ -25,6 +25,7 @@ public class JdbcTemplate {
         try (Connection con = ConnectionManager.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
+                //반환이 리스트이므로 while문
                 T object = rowMapper.mapRow(rs);
                 objects.add(object);
             }
@@ -40,6 +41,7 @@ public class JdbcTemplate {
             rs = pstmt.executeQuery();
             T object = null;
             if (rs.next()) {
+                //반환이 T 하나이므로 if문
                 object = rowMapper.mapRow(rs);
             }
             return object;

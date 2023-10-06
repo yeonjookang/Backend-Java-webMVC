@@ -12,6 +12,11 @@ import java.util.logging.Logger;
 
 @WebListener
 public class ContextLoaderListener implements ServletContextListener {
+
+    /**
+     * 서블릿 컨텍스트 초기화될 때 DB 설정 초기화도 완료
+     */
+
     private static final Logger logger = Logger.getLogger(ContextLoaderListener.class.getName());
 
     @Override

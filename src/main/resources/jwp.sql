@@ -8,7 +8,6 @@ CREATE TABLE USERS (
 
                        PRIMARY KEY               (userId)
 );
-
 INSERT INTO USERS VALUES('admin', 'password', '정우', 'admin@naver.com');
 
 DROP TABLE IF EXISTS QUESTIONS;
@@ -33,7 +32,6 @@ CREATE TABLE ANSWERS (
                          questionId			bigint				NOT NULL,
                          PRIMARY KEY         (answerId)
 );
-
 INSERT INTO QUESTIONS (writer, title, contents, createdDate, countOfAnswer) VALUES
     ('정우',
      '스프링이 갑자기 대세가 된 이유는 뭘까?',
@@ -81,10 +79,6 @@ INSERT INTO QUESTIONS (writer, title, contents, createdDate, countOfAnswer) VALU
      '오늘 그홉 ㄱㄱ?',
      '컴공 낭만 그홉 하실 분 구함 \n 맥주 먹으면서 백준 푸실 분 구함',
      CURRENT_TIMESTAMP(), 3);
-림
-    ('박장우',
-     '이것이 회장인가...',
-     CURRENT_TIMESTAMP(), 5);
 
 INSERT INTO ANSWERS (writer, contents, createdDate, questionId) VALUES
     ('정현석',
@@ -95,3 +89,4 @@ INSERT INTO ANSWERS (writer, contents, createdDate, questionId) VALUES
     ('송채영',
      '사자 머리 보여드',
      CURRENT_TIMESTAMP(), 4);
+
